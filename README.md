@@ -1,4 +1,4 @@
-# echoAR-Twitter-Demo
+# Unity-ARFoundation-echoAR-Twitter-Demo
 Twitter Demo for echoAR.  Type a hashtag search query - eg. #election2020 or #BlackLivesMatter - (with no spaces for now!) into search bar and hit search to spawn up to 15 local tweets containing the hashtag. 
 
 ## Register
@@ -25,7 +25,7 @@ Don't have an API key? Make sure to register for FREE at [echoAR](https://www.ec
    * Add ```ARCamera``` from the hierarchy to the ```Spawn Point``` field.
 
 ## Build & Run
-[Build and run the AR application.](https://docs.echoar.xyz/unity/adding-ar-capabilities#4-build-and-run-the-ar-application) Verify that the AR Foundation\Scenes\FaceTracking\FaceMesh scene is ticked in the Scenes in Build list and click ```Build And Run```.
+[Build and run the AR application.](https://docs.echoar.xyz/unity/adding-ar-capabilities#4-build-and-run-the-ar-application) Verify that the ```Assets/Scenes/Main``` scene is ticked in the Scenes in Build list and click ```Build And Run```.
 
 ## Learn More
 Refer to our [documentation](https://docs.echoar.xyz/unity/) to learn more about how to use Unity and echoAR.
