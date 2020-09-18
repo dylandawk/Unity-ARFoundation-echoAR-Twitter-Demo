@@ -34,6 +34,6 @@ Refer to our [documentation](https://docs.echoar.xyz/unity/) to learn more about
 Feel free to reach out at [support@echoAR.xyz](support@echoAR.xyz) or join our [support channel on Slack](https://join.slack.com/t/echoar/shared_invite/enQtNTg4NjI5NjM3OTc1LWU1M2M2MTNlNTM3NGY1YTUxYmY3ZDNjNTc3YjA5M2QyNGZiOTgzMjVmZWZmZmFjNGJjYTcxZjhhNzk3YjNhNjE).
 
 ## Screenshots
-![demo Gif](https://github.com/dylandawk/Unity-ARFoundation-echoAR-Twitter-Demo/tree/master/Images/twitter_echo_AR_screenshot.gif)
+![demo Gif](Images/twitter_echo_AR_screenshot.gif)
 
-![demo Screenshot](https://github.com/dylandawk/Unity-ARFoundation-echoAR-Twitter-Demo/tree/master/Images/echoArGrab.png)
+![demo Screenshot](Images/echoArGrab.png)
