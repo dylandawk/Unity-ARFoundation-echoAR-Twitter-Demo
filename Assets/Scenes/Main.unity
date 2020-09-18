@@ -998,7 +998,7 @@ MonoBehaviour:
     type: 3}
   spawnPoint: {fileID: 1841264100}
   distance: 0.91
-  power: 2.2
+  power: 4.15
   torquePower: 3
 --- !u!1 &1828888096
 GameObject:
