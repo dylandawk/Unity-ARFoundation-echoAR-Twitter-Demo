@@ -966,8 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91547231b46034fbb852e03b154400c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TwitterApiConsumerKey: 1XwiGgg3iEobX1dNYNOT3vRer
-  TwitterApiConsumerSecret: ' ggLNUfD9rZkMBcKLSaqIGK11KmYNnX0EAtmVBQt5qca4tMpaI0'
+  TwitterApiConsumerKey: <YOUR TWITTER API CONSUMER KEY>
+  TwitterApiConsumerSecret: <YOUR TWITTER API CONSUMER SECRET>
   inputField: {fileID: 1196692261}
   searchQuery: 
   language: en

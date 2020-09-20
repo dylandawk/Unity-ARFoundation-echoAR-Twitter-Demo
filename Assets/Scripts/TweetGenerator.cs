@@ -29,12 +29,12 @@ public class TweetGenerator : MonoBehaviour
 
     private void Start()
     {
-        screenText = tweetManager.debugText;
+        //screenText = tweetManager.debugText;
     }
     public void GenerateTweets()
     {
         //iterate through search results
-        screenText.text = "Generating Tweets";
+        //screenText.text = "Generating Tweets";
         foreach(Tweet tweet in tweetManager.SearchResults)
         {
             // create Tweet gameobject in front of spawnPoint (camera)
@@ -49,7 +49,7 @@ public class TweetGenerator : MonoBehaviour
 
             // wait for child (and text) to load 
             StartCoroutine(LoadEchoARPrefab(tweetObject, spawnObject, tweet));
-            screenText.text = "echoAR object loaded";
+            //screenText.text = "echoAR object loaded";
         }
     }
 
@@ -59,7 +59,7 @@ public class TweetGenerator : MonoBehaviour
         int maxWait = 20;
         while(spawnObj.transform.childCount == 0)
         {
-            screenText.text = "Waiting for echoAR to load";
+            //screenText.text = "Waiting for echoAR to load";
             yield return new WaitForSeconds(1);
             maxWait--;
         }
@@ -68,7 +68,7 @@ public class TweetGenerator : MonoBehaviour
         if(maxWait < 0)
         {
             Debug.Log("Loading EchoAR Asset timed out");
-            screenText.text = "Loading EchoAR Asset timed out";
+            //screenText.text = "Loading EchoAR Asset timed out";
             yield break;
         }
 
@@ -82,7 +82,7 @@ public class TweetGenerator : MonoBehaviour
     // assign tweet data to game object text
     private void GenerateText(GameObject tweetObj, Tweet tweet)
     {
-        screenText.text = "Generating Text";
+        //screenText.text = "Generating Text";
 
         //grab canvas and panel reference
         GameObject canvas = tweetObj.gameObject.transform.Find("Canvas").gameObject;
@@ -106,7 +106,7 @@ public class TweetGenerator : MonoBehaviour
 
     private void AddMovement(GameObject tweetObj)
     {
-        screenText.text = "Adding Movement";
+        //screenText.text = "Adding Movement";
 
            //send tweet floating in front of camera
            // get rigid body

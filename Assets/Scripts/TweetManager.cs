@@ -12,8 +12,8 @@ using Web.Twitter.DataStructures;
 public class TweetManager : MonoBehaviour
 {
 
-    public string TwitterApiConsumerKey = "<YOUR TWITTER API KEY>";
-    public string TwitterApiConsumerSecret = "<YOUR TWITTER API SECRET>";
+    public string TwitterApiConsumerKey;
+    public string TwitterApiConsumerSecret;
 
     TweetGenerator tg;
     public GameObject inputField;
@@ -39,9 +39,10 @@ public class TweetManager : MonoBehaviour
         tg = GetComponent<TweetGenerator>();
 
         // get Debug Text game object
-        debugText = GameObject.Find("DebugText").GetComponent<Text>();
+        //debugText = GameObject.Find("DebugText").GetComponent<Text>();
     }
 
+    // prints search results
     private void PrintTweets()
     {
         foreach(Tweet tweet in SearchResults)
@@ -65,22 +66,23 @@ public class TweetManager : MonoBehaviour
         // prep search
         if(latitude != 0 || longitude != 0) geocode = latitude.ToString() + "," + longitude.ToString() + "," + radius.ToString() + "mi";
         searchQuery = NewQuery();
-        Debug.Log(searchQuery);
-        debugText.text = searchQuery;
+        //Debug.Log(searchQuery);
+        //debugText.text = searchQuery;
+
         // search
         SearchResults = await TwitterRestApiHelper.SearchForTweets(searchQuery, this.TwitterApiAccessToken.access_token, language, geocode);   
         if (SearchResults != null)
         {
             isTweetFound = true;
             Debug.Log("Tweets Found");
-            PrintTweets();
-            debugText.text = "Tweets Found";
+            //PrintTweets();
+            //debugText.text = "Tweets Found";
             tg.GenerateTweets();
         }
         else
         {
             Debug.Log("Tweets not Found");
-            debugText.text = "Tweets Not Found";
+            //debugText.text = "Tweets Not Found";
         }
         
     }
@@ -91,7 +93,7 @@ public class TweetManager : MonoBehaviour
         if (!Input.location.isEnabledByUser)
         {
             //if location is not enabled use default values
-            debugText.text = "Location is not enabled";
+            //debugText.text = "Location is not enabled";
             SearchTweets();
             yield break;
         }
@@ -104,7 +106,7 @@ public class TweetManager : MonoBehaviour
         int maxWait = 20;
         while(Input.location.status == LocationServiceStatus.Initializing && maxWait > 0){
             yield return new WaitForSeconds(1);
-            debugText.text = "Location initializing";
+            //debugText.text = "Location initializing";
             maxWait --; 
         }
 
@@ -112,7 +114,7 @@ public class TweetManager : MonoBehaviour
         if (maxWait < 1)
         {
             print("Timed out");
-            debugText.text = "Location timed out";
+            //debugText.text = "Location timed out";
             yield break;
         }
 
@@ -120,14 +122,14 @@ public class TweetManager : MonoBehaviour
         if(Input.location.status == LocationServiceStatus.Failed)
         {
             print("Unable to determine device location");
-            debugText.text = "Location failed";
+            //debugText.text = "Location failed";
             yield break;
         } else
         {
             //log Longitude and Latitude and search Tweets
             latitude = Input.location.lastData.latitude;
             longitude = Input.location.lastData.longitude;
-            debugText.text = "Location Found:" + latitude.ToString() +", " + longitude.ToString();
+            //debugText.text = "Location Found:" + latitude.ToString() +", " + longitude.ToString();
             SearchTweets();
         }
 
