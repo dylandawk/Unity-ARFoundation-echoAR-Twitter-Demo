@@ -17,7 +17,9 @@ Don't have an API key? Make sure to register for FREE at [echoAR](https://www.ec
 3. Download [echoAR Unity SDK](https://bit.ly/echoARUnitySDKDownload) and import the package into the project
 4. [Set the echoAR API key](https://docs.echoar.xyz/unity/using-the-sdk) in the echoAR.cs script inside the ```Assets/echoAR/echoAR.prefab``` using the the Inspector.
 5. In ```Assets/echoAR/CustomBehaviour.cs```, comment out line 27 
-```this.gameObject.AddComponent<RemoteTransformations>().entry = entry;```
+```
+this.gameObject.AddComponent<RemoteTransformations>().entry = entry;
+```
 and replace with:
 ```c#
 // Set Rotation to parent
