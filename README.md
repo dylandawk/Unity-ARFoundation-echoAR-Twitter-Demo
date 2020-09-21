@@ -35,5 +35,6 @@ Feel free to reach out at [support@echoAR.xyz](support@echoAR.xyz) or join our [
 
 ## Screenshots
 ![demo gif](Images/Twitter.gif)
+note: text under search bar will not appear in current build.
 
 ![demo Screenshot](Images/echoArGrab.png)
