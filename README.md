@@ -16,9 +16,18 @@ Don't have an API key? Make sure to register for FREE at [echoAR](https://www.ec
 2. Add and Open repo in Unity Hub as Unity 3D Project
 3. Download [echoAR Unity SDK](https://bit.ly/echoARUnitySDKDownload) and import the package into the project
 4. [Set the echoAR API key](https://docs.echoar.xyz/unity/using-the-sdk) in the echoAR.cs script inside the ```Assets/echoAR/echoAR.prefab``` using the the Inspector.
-5. Open ```Assets/Scenes/Main```.
-6. Click on the ```TweetManager``` game object in the heirarchy and in the ```Inspector > TweetManager(Script)``` add your Twitter **API Key** and **API Secret Key**.
-7. In the ```TweetManager``` game object, in the ```Inspector > TweetGenerator(Script)``` 
+5. In ```Assets/echoAR/CustomBehaviour.cs```, comment out line 27 
+```this.gameObject.AddComponent<RemoteTransformations>().entry = entry;```
+and replace with:
+```c#
+// Set Rotation to parent
+this.gameObject.transform.rotation = this.gameObject.transform.parent.transform.rotation;
+// Set Scale
+this.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+```
+6. Open ```Assets/Scenes/Main```.
+7. Click on the ```TweetManager``` game object in the heirarchy and in the ```Inspector > TweetManager(Script)``` add your Twitter **API Key** and **API Secret Key**.
+8. In the ```TweetManager``` game object, in the ```Inspector > TweetGenerator(Script)``` 
 
    * Add ```Assets/Prefabs/TweetObject.Prefab``` to the ```Tweet Prefab``` field.
    * Add ```Assets/echoAR/echoAR.prefab``` to the ```Object To Spawn``` field.
